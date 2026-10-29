@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wedding Card Studio — ออกแบบการ์ดแต่งงาน</title>
+  <meta name="description" content="เลือกแบบการ์ดแต่งงาน ใส่ชื่อบ่าวสาว แล้วดาวน์โหลดเป็นรูปภาพได้ทันที">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23a8834f' stroke-width='5'%3E%3Ccircle cx='24' cy='36' r='15'/%3E%3Ccircle cx='40' cy='36' r='15'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Charmonman:wght@400;700&family=Srisakdi:wght@400;700&family=Sriracha&family=Mali:wght@400;600&family=Itim&family=Mitr:wght@400&family=Sarabun:wght@400;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Wedding Card Studio</h1>
+    <p>เลือกแบบการ์ด ใส่ชื่อของคุณ แล้วดาวน์โหลดได้ทันที</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel gallery-panel" aria-labelledby="step-1">
+      <h2 id="step-1"><span class="num">1</span>เลือกแบบการ์ด</h2>
+      <div class="gallery" id="gallery" role="radiogroup" aria-labelledby="step-1"></div>
+      <label class="upload">
+        <input type="file" id="bg-upload" accept="image/*">
+        <span>+ ใช้รูปของคุณเป็นพื้นหลัง</span>
+      </label>
+    </section>
+
+    <section class="panel preview-panel" aria-label="ตัวอย่างการ์ด">
+      <canvas id="card" width="1200" height="1680"></canvas>
+    </section>
+
+    <section class="panel form-panel" aria-labelledby="step-2">
+      <h2 id="step-2"><span class="num">2</span>กรอกรายละเอียด</h2>
+      <form id="form" autocomplete="off">
+        <label>หัวข้อ
+          <input name="heading" value="ขอเชิญร่วมเป็นเกียรติในงานมงคลสมรส">
+        </label>
+        <div class="row">
+          <label>ชื่อเจ้าสาว
+            <input name="bride" value="ปิยะนุช">
+          </label>
+          <label>ชื่อเจ้าบ่าว
+            <input name="groom" value="ธนวัฒน์">
+          </label>
+        </div>
+        <fieldset class="font-picker">
+          <legend>ฟอนต์ชื่อ (ลายมือ)</legend>
+          <div class="font-options">
+            <label class="font-chip"><input type="radio" name="nameFont" value="Charm" checked><span class="sample name-sample" style="font-family: 'Charm'; font-weight: 700">ปิยะนุช</span><small>Charm · พู่กันหวาน</small></label>
+            <label class="font-chip"><input type="radio" name="nameFont" value="Charmonman"><span class="sample name-sample" style="font-family: 'Charmonman'; font-weight: 700">ปิยะนุช</span><small>Charmonman · ปากกาคอแร้ง</small></label>
+            <label class="font-chip"><input type="radio" name="nameFont" value="Srisakdi"><span class="sample name-sample" style="font-family: 'Srisakdi'; font-weight: 700">ปิยะนุช</span><small>Srisakdi · ไทยประดิษฐ์</small></label>
+            <label class="font-chip"><input type="radio" name="nameFont" value="Sriracha"><span class="sample name-sample" style="font-family: 'Sriracha'">ปิยะนุช</span><small>Sriracha · ลายมือปากกา</small></label>
+            <label class="font-chip"><input type="radio" name="nameFont" value="Mali"><span class="sample name-sample" style="font-family: 'Mali'; font-weight: 600">ปิยะนุช</span><small>Mali · ลายมือน่ารัก</small></label>
+            <label class="font-chip"><input type="radio" name="nameFont" value="Itim"><span class="sample name-sample" style="font-family: 'Itim'">ปิยะนุช</span><small>Itim · ลายมือเรียบ</small></label>
+          </div>
+        </fieldset>
+        <fieldset class="font-picker">
+          <legend>ฟอนต์รายละเอียด</legend>
+          <div class="font-options">
+            <label class="font-chip"><input type="radio" name="detailFont" value="Sarabun" checked><span class="sample" style="font-family: 'Sarabun'">ขอเชิญร่วมงาน</span><small>Sarabun · อ่านง่าย</small></label>
+            <label class="font-chip"><input type="radio" name="detailFont" value="Mali"><span class="sample" style="font-family: 'Mali'">ขอเชิญร่วมงาน</span><small>Mali · ลายมือ</small></label>
+            <label class="font-chip"><input type="radio" name="detailFont" value="Itim"><span class="sample" style="font-family: 'Itim'">ขอเชิญร่วมงาน</span><small>Itim · ลายมือ</small></label>
+            <label class="font-chip"><input type="radio" name="detailFont" value="Sriracha"><span class="sample" style="font-family: 'Sriracha'">ขอเชิญร่วมงาน</span><small>Sriracha · ลายมือ</small></label>
+          </div>
+        </fieldset>
+        <div class="row">
+          <label>วันที่
+            <input type="date" name="date" value="2027-02-14">
+          </label>
+          <label>เวลา
+            <input name="time" value="เวลา 18.00 น.">
+          </label>
+        </div>
+        <label>สถานที่
+          <textarea name="venue" rows="2">ณ ห้องแกรนด์บอลรูม โรงแรมริมน้ำ กรุงเทพมหานคร</textarea>
+        </label>
+        <label>ข้อความท้ายการ์ด
+          <input name="note" value="ด้วยความเคารพรัก">
+        </label>
+      </form>
+
+      <h2 id="step-3"><span class="num">3</span>ดาวน์โหลด</h2>
+      <div class="actions">
+        <button type="button" class="btn" data-download="image/png">ดาวน์โหลด PNG</button>
+        <button type="button" class="btn ghost" data-download="image/jpeg">ดาวน์โหลด JPG</button>
+      </div>
+      <p class="hint">ไฟล์ขนาด 1200 × 1680 px (สัดส่วน 5×7 นิ้ว) พร้อมส่งทางไลน์หรือนำไปพิมพ์</p>
+    </section>
+  </main>
+
+  <script src="js/templates.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
